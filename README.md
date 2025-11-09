@@ -1,51 +1,70 @@
-# 🕊️ ActualidadDelitosSexuales-Colombia  
-**Informe Nacional sobre Delitos Sexuales en Colombia (2010–2025)**  
-📊 *Una mirada integral hacia la comprensión, prevención y análisis de datos.*
+<!-- Banner principal -->
+<p align="center">
+  <img src="resources/images/fondo_inicio.jpg" alt="Banner del proyecto" width="100%">
+</p>
+
+<h1 align="center">🕊️ ActualidadDelitosSexuales-Colombia</h1>
+<h3 align="center">Informe Nacional sobre Delitos Sexuales en Colombia (2010–2025)</h3>
+<p align="center">
+  <em>Una mirada integral hacia la comprensión, prevención y análisis de los delitos sexuales en Colombia.</em>
+</p>
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/Streamlit-WebApp-red?logo=streamlit" alt="Streamlit">
+  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-green?logo=pandas" alt="Pandas">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative" alt="MIT License">
+</p>
 
 ---
 
 ## 📘 Descripción del Proyecto
 
-Este proyecto presenta un **análisis estadístico y geográfico detallado** de los delitos sexuales cometidos en Colombia entre los años **2010 y 2025**, utilizando fuentes oficiales y técnicas de ciencia de datos.  
-Su objetivo es **visibilizar la magnitud de la problemática**, así como **proveer información clave** para la formulación de políticas públicas, estrategias de prevención y atención integral a las víctimas.
+Este proyecto desarrolla un **análisis integral, estadístico y territorial** de los delitos sexuales registrados en Colombia entre **2010 y 2025**, con base en información de la **Policía Nacional** y entidades oficiales.  
 
-El estudio busca no solo describir los patrones delictivos, sino también promover una **reflexión colectiva sobre las dinámicas sociales y estructurales** que perpetúan la violencia sexual en el país.
+Busca **visibilizar la magnitud del problema**, comprender sus patrones y ofrecer **insumos para la formulación de políticas públicas** que promuevan la **prevención y protección de las víctimas**.
+
+> 🧠 Este proyecto combina ciencia de datos, análisis geográfico y comunicación visual para promover la comprensión de una problemática social urgente.
 
 ---
 
 ## 🇨🇴 Contexto
 
-En el contexto colombiano, los delitos sexuales representan un fenómeno persistente y complejo que impacta profundamente la **estructura social, la justicia y el bienestar de las comunidades**.  
-A través de este informe, se pretende fortalecer la conciencia sobre la necesidad de:
+En Colombia, los **delitos sexuales** representan una de las violencias más persistentes y complejas, afectando profundamente la estructura social y el bienestar de las comunidades.  
+La falta de denuncia, los estigmas y las brechas institucionales dificultan su comprensión real.  
 
-- Mejorar los mecanismos institucionales de protección y denuncia.  
-- Fomentar la educación en equidad de género.  
-- Impulsar una cultura de respeto, integridad y dignidad humana.
+Este informe busca contribuir a:
 
----
-
-## 🧭 Objetivos del Proyecto
-
-### 🎯 Objetivo General
-Analizar y visualizar los delitos sexuales registrados en Colombia (2010–2025), para comprender sus tendencias, distribución territorial y evolución temporal.
-
-### 🔍 Objetivos Específicos
-- Explorar la distribución geográfica y temporal de los casos reportados.  
-- Identificar departamentos con mayor incidencia.  
-- Analizar variables asociadas como tipo de arma, género de la víctima y lugar del delito.  
-- Presentar resultados interactivos y visuales mediante una **interfaz web en Streamlit**.
+- 💬 **Promover el debate público** sobre la magnitud de los delitos sexuales.  
+- 🧭 **Fortalecer la toma de decisiones** basada en evidencia.  
+- 🕊️ **Impulsar una cultura de equidad, integridad y dignidad humana.**
 
 ---
 
-## 💡 Herramientas y Tecnologías
+## 🎯 Objetivos del Proyecto
 
-| Categoría | Tecnología |
-|------------|-------------|
+### Objetivo General
+Analizar, visualizar y comprender los patrones de los delitos sexuales en Colombia entre 2010 y 2025, mediante técnicas de análisis estadístico y visualización de datos.
+
+### Objetivos Específicos
+- Explorar la **distribución geográfica** y evolución temporal de los delitos.  
+- Identificar **departamentos con mayor incidencia**.  
+- Evaluar la relación entre **tipos de delito, género y uso de armas**.  
+- Desarrollar una **interfaz web interactiva en Streamlit** que comunique los hallazgos de forma accesible.
+
+---
+
+## 💡 Tecnologías Utilizadas
+
+| Tipo | Herramienta / Librería |
+|------|-------------------------|
 | Lenguaje principal | 🐍 Python |
-| Visualización web | 🌐 [Streamlit](https://streamlit.io) |
-| Mapas interactivos | 🗺️ Folium / Plotly |
-| Análisis de datos | 📈 Pandas / NumPy |
-| Base de datos | 💾 CSV |
-| Control de versiones | 🧩 Git & GitHub |
+| Framework web | 🌐 Streamlit |
+| Análisis de datos | 📊 Pandas, NumPy |
+| Visualización | 📈 Plotly, Folium |
+| Estilo / UI | 🎨 HTML + CSS personalizado |
+| Control de versiones | 🧩 Git + GitHub |
 
 ---
