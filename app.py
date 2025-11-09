@@ -1,28 +1,104 @@
-import streamlit as st
-import pandas as pd
-import geopandas as gpd
-import plotly.express as px
+#LIBRERIAS
 import folium as folium
 from streamlit_option_menu import option_menu
-from streamlit_folium import st_folium
-from pandas_handler import clean_df
-from informes_handler import informe_clasificacion_delitos_departamento
 from figures import *
 from web.style.style import *
-
+import pathlib, runpy, streamlit as st
 
 
 #STREAMLIT APP
 
 st.set_page_config(page_title="Análisis de Delitos Sexuales en Colombia", layout="wide", initial_sidebar_state="collapsed",
                    page_icon=":bar_chart:")
+st.markdown("""
+    <style>
+    [data-testid="stSidebarNav"] {display: none;}
+    </style>
+""", unsafe_allow_html=True)
 
 
-#ESPACIO PARA ESTILOS
+home_styles = """
+<style>
+/* Fondo general */
+.stApp {
+    background-color: #f4f4f4;
+    background-image: url("resources/images/fondo_inicio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-#Estilo para Cajas de Texto h3
-st.markdown(h3_boxes, unsafe_allow_html=True)
+/* Contenedor principal */
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 4rem auto;
+    padding: 3rem 4rem;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 25px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease-in-out;
+}
 
+/* Texto principal */
+.hero-text h1 {
+    color: #0B2948;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h2 {
+    color: #1b4f72;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hero-text p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Tarjeta lateral */
+.hero-side {
+    background: #0B2948;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(11, 41, 72, 0.2);
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.hero-side:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(11, 41, 72, 0.3);
+}
+
+.hero-side h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+}
+
+.hero-side p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+"""
 
 
 with st.sidebar:
@@ -35,73 +111,41 @@ with st.sidebar:
     )
 
 if selected == "Inicio":
-
-    st.set_page_config(layout='centered')
-    st.image('resources/images/fondo_inicio.jpg', width='content')
-    st.title("Página de Inicio", width='content')
+    
+    st.markdown(home_styles, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Informe Nacional sobre Delitos Sexuales en Colombia (2010–2025)</h1>
+            <h2>Una mirada integral hacia la comprensión y prevención</h2>
+            <p>
+            Este informe presenta un análisis detallado de los delitos sexuales cometidos en Colombia
+            durante los últimos quince años, utilizando datos oficiales y técnicas de análisis estadístico.
+            Su propósito es visibilizar la magnitud de esta problemática y ofrecer insumos para la toma
+            de decisiones orientadas a la prevención y la atención de las víctimas.
+            </p>
+            <br>
+            <p>
+            En el contexto colombiano, los delitos sexuales representan un fenómeno complejo que impacta
+            profundamente la estructura social y el bienestar de las comunidades. La persistencia de estos
+            casos exige una reflexión colectiva sobre las políticas de educación, justicia y equidad de género,
+            así como una revisión constante de las estrategias institucionales de protección y denuncia.
+            </p>
+        </div><div class="hero-side">
+            <h3>¿Por qué este estudio es importante?</h3>
+            <p>
+            Comprender las tendencias de los delitos sexuales permite fortalecer las políticas públicas
+            y enfocar esfuerzos en la protección de las víctimas, garantizando una Colombia más segura
+            y consciente del valor de la integridad y la dignidad humana.
+            </p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     
-
-
-    numero_1 = st.number_input('ingrese un Numero', key='num1')
-    numero_2 = st.number_input('ingrese un Numero', key='num2')
-
-    try:
-        resultado = numero_1 + numero_2
-        st.text(f'El resultado de la suma es: {resultado}')
-    except Exception as e:  
-        st.text(f'Ocurrio un error: {e}')
-
-    st.divider()
-
-
-    st.text('Con botones:')
-
-
-    numero_2 = st.number_input('ingrese un Numero', key='num3')
-    numero_3 = st.number_input('ingrese un Numero', key='num4')
-
-
-    if st.button('Sumar'):
-        try:
-            resultado = numero_2 + numero_3
-            st.text(f'El resultado de la suma es: {resultado}')
-        except Exception as e:  
-            st.text(f'Ocurrio un error: {e}')
-
-    st.divider()
 elif selected == "Información":
-    # Título principal estilizado
-    st.markdown(titlo_principal_estilo, unsafe_allow_html=True
-    )
-
-    # Separación visual
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    col1, col2 = st.columns(2)
-
-    # Columna izquierda — DataFrame
-    with col1:
-        st.markdown(columna_izquierda_estilo, unsafe_allow_html=True)
-
-        st.dataframe(clean_df, use_container_width=True)
-
-
-    st.markdown(derechos,unsafe_allow_html=True
-        )
-
-    # Columna derecha — Descripcion
-    with col2:
-        st.markdown(descripcion_estilo, unsafe_allow_html=True)
-    departamento_mayor = informe_clasificacion_delitos_departamento.iloc[0]['DP']
-    departamento_menor = informe_clasificacion_delitos_departamento.iloc[-1]['DP']
-    mediana = informe_clasificacion_delitos_departamento['CANTIDAD'].median()
-
-    st.markdown(boxes(departamento_mayor, departamento_menor, mediana), unsafe_allow_html=True)
-    st.plotly_chart(figura, width='stretch')
-
-
-    #Mapa
-
-    mapa = get_mapa()
-    st_folium(mapa, width='stretch', key='mapa_delitos', returned_objects=[])
+    try:
+        page_file = pathlib.Path(__file__).parent / "pages" / "informe.py"
+        runpy.run_path(str(page_file), run_name="__main__")
+    except Exception as e:
+        st.error(f"Error ejecutando informe.py: {e}")
