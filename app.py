@@ -4,9 +4,13 @@ from streamlit_option_menu import option_menu
 from figures import *
 from web.style.style import *
 import pathlib, runpy, streamlit as st
+from pathlib import Path
 
 
-#STREAMLIT APP
+################################################################################################                           
+                                    #  STREAMLIT APP  #
+################################################################################################ 
+
 
 st.set_page_config(page_title="Análisis de Delitos Sexuales en Colombia", layout="wide", initial_sidebar_state="collapsed",
                    page_icon=":bar_chart:")
@@ -100,17 +104,20 @@ home_styles = """
 </style>
 """
 
+################################################################################################                           
+                                    #  SIDEBAR CONFIGURATION  #
+################################################################################################      
 
 with st.sidebar:
     selected = option_menu(
-        menu_title="Menu Principal",
-        options=["Inicio", "Información", "Sobre el Equipo"],
+        menu_title="Menu",
+        options=["Home", "Dashboards", "About us"],
         icons=["house", "table", "info-circle"],
         menu_icon="cast",
         default_index=0,
     )
 
-if selected == "Inicio":
+if selected == "Home":
     
     st.markdown(home_styles, unsafe_allow_html=True)
     st.markdown("""
@@ -143,9 +150,122 @@ if selected == "Inicio":
     """, unsafe_allow_html=True)
 
     
-elif selected == "Información":
+elif selected == "Dashboards":
     try:
         page_file = pathlib.Path(__file__).parent / "pages" / "informe.py"
         runpy.run_path(str(page_file), run_name="__main__")
     except Exception as e:
         st.error(f"Error ejecutando informe.py: {e}")
+
+elif selected == "About us":
+        
+    st.markdown("""
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    /* GRID DEL EQUIPO */
+    .team-grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    /* TARJETAS */
+    .card {
+        width: 320px;
+        padding: 25px;
+        border-radius: 25px;
+        backdrop-filter: blur(14px) saturate(150%);
+        background: rgba(255, 255, 255, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.20);
+        text-align: center;
+        transition: all 0.35s ease;
+    }
+    .card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.30);
+    }
+    /* FOTOS */
+    .card img {
+        max-width: 160px;
+        max-height: 160px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 22px;
+        margin-bottom: 15px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
+    }
+    /* NOMBRES */
+    .card h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: #111;
+    }
+    /* DESCRIPCIÓN */
+    .card p {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.55;
+        color: #333;
+        margin-bottom: 14px;
+    }
+    /* ICONOS DE CONTACTO */
+    .contact-icons a {
+        margin: 0px 10px;
+        font-size: 22px;
+        color: #007aff;
+        transition: 0.25s ease;
+    }
+    .contact-icons a:hover {
+        color: #0051a8;
+        transform: scale(1.15);
+    }
+    </style>
+    <div class="team-grid">
+        <!-- Esteban -->
+        <div class="card">
+            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1">
+            <h3>Juan Esteban López Gómez</h3>
+            <p>
+                ........
+            </p>
+            <div class="contact-icons">
+                <a href="mailto:juan.lopez@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/juanlopez/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="tel:+573001112233"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+        <!-- Miguel -->
+        <div class="card">
+            <img src="./resources/images/miguel.jpg" alt="Foto 2">
+            <h3>Miguel Angel Cuervo Espinosa</h3>
+            <p>
+                Analista de datos con formación en ingeniería y experiencia usando Python, Power BI y estadística para procesar, limpiar y visualizar datos complejos. 
+                Mediante análisis, automatizaciones y reportes para la toma de decisiones y proyectos de investigación aplicada.
+            </p>
+            <div class="contact-icons">
+                <a href="mailto:milcuervo@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/miguelcuervoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="tel:+573102848527"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+        <!-- Camilo -->
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Foto 3">
+            <h3>Juan Camilo Loaiza</h3>
+            <p>
+                .........
+            </p>
+            <div class="contact-icons">
+                <a href="mailto:juan.camilo@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="tel:+573023334455"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)

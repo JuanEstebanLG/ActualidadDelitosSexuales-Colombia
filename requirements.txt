@@ -1,0 +1,5 @@
+streamlit
+pandas
+plotly
+streamlit_option_menu
+folium
