@@ -6,7 +6,7 @@ from pandas_handler import geo_url
 import folium
 
 figura = px.bar(informe_clasificacion_delitos_departamento, x='DP', y='CANTIDAD', title='Número de Delitos Sexuales por Departamento en Colombia (2025)',
-            labels={'DP': 'Departamento', 'CANTIDAD': 'Número de Delitos Sexuales'},
+            labels={'DP': '', 'CANTIDAD': 'Número de Delitos Sexuales'},
             color='CANTIDAD',
             color_continuous_scale='Viridis')
 
