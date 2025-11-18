@@ -26,7 +26,7 @@ home_styles = """
 /* Fondo general */
 .stApp {
     background-color: #f4f4f4;
-    background-image: url("https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/pexels-anna-nekrashevich-6801648.jpg?raw=true");
+    background-image: url("https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/foto_inicio.jpg?raw=true");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
