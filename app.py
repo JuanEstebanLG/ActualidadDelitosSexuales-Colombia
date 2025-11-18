@@ -259,12 +259,13 @@ elif selected == "About us":
             <img src="https://via.placeholder.com/150" alt="Foto 3">
             <h3>Juan Camilo Loaiza</h3>
             <p>
-                .........
+                Administrador financiero con 15 años de experiencia como auditor en diversas empresas, 
+                especializado en fortalecer controles internos, mejorar procesos y asegurar la calidad de la información financiera.
             </p>
             <div class="contact-icons">
-                <a href="mailto:juan.camilo@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:majoca854@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="tel:+573023334455"><i class="fa-solid fa-phone"></i></a>
+                <a href="tel:+573147480641:"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </div>
