@@ -66,6 +66,7 @@ home_styles = """
     color: #333;
     line-height: 1.6;
     font-size: 1rem;
+    text-align: justify
 }
 
 /* Tarjeta lateral */
@@ -77,6 +78,7 @@ home_styles = """
     box-shadow: 0 4px 20px rgba(11, 41, 72, 0.2);
     transform: translateY(0);
     transition: all 0.4s ease;
+    text-align: justify
 }
 
 .hero-side:hover {
@@ -237,7 +239,6 @@ elif selected == "About us":
             <div class="contact-icons">
                 <a href="mailto:juan.lopez@example.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/juanlopez/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="tel:+573001112233"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
         <!-- Miguel -->
@@ -251,7 +252,6 @@ elif selected == "About us":
             <div class="contact-icons">
                 <a href="mailto:milcuervo@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/miguelcuervoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="tel:+573102848527"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
         <!-- Camilo -->
@@ -265,7 +265,6 @@ elif selected == "About us":
             <div class="contact-icons">
                 <a href="mailto:majoca854@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="tel:+573147480641:"><i class="fa-solid fa-phone"></i></a>
             </div>
         </div>
     </div>
