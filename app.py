@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ################################################################################################                           
-                                    #  STREAMLIT APP  #
+                                    #  STREAMLIT DESING  #
 ################################################################################################ 
 
 
@@ -26,7 +26,7 @@ home_styles = """
 /* Fondo general */
 .stApp {
     background-color: #f4f4f4;
-    background-image: url("resources/images/fondo_inicio.jpg");
+    background-image: url("https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/pexels-anna-nekrashevich-6801648.jpg?raw=true");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -196,7 +196,7 @@ elif selected == "About us":
         width: 100%;
         height: auto;
         object-fit: contain;
-        border-radius: 22px;
+        border-radius: 100%;
         margin-bottom: 15px;
         box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
     }
@@ -229,7 +229,7 @@ elif selected == "About us":
     <div class="team-grid">
         <!-- Esteban -->
         <div class="card">
-            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1">
+            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1" class="card-image-top">
             <h3>Juan Esteban López Gómez</h3>
             <p>
                 ........
@@ -242,10 +242,10 @@ elif selected == "About us":
         </div>
         <!-- Miguel -->
         <div class="card">
-            <img src="./resources/images/miguel.jpg" alt="Foto 2">
+            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/miguel.jpg?raw=true" alt="Foto 2">
             <h3>Miguel Angel Cuervo Espinosa</h3>
             <p>
-                Analista de datos con formación en ingeniería y experiencia usando Python, Power BI y estadística para procesar, limpiar y visualizar datos complejos. 
+                Analista de datos con formación en ingeniería y ciencias biológicas. Con experiencia en Python, Power BI y estadística para procesar, limpiar y visualizar datos complejos. 
                 Mediante análisis, automatizaciones y reportes para la toma de decisiones y proyectos de investigación aplicada.
             </p>
             <div class="contact-icons">
