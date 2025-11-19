@@ -86,7 +86,6 @@ for i in range(0, len(totales), n_cols):
             año = 2021 + idx  
             col.metric(f"Año {año}", round(totales[idx], 2), f"{int(deltas[idx])}%", border=True)
 
-<<<<<<< HEAD
 
 
 st.text_area('El ')
@@ -95,7 +94,5 @@ dp = st.selectbox("Seleccione el Departamento", informe_tendencia['DP'], index=0
 fig = tendencias(dp)
 
 st.plotly_chart(fig, use_container_width=True)
-=======
 st.markdown(metric_explanation, unsafe_allow_html=True)
->>>>>>> 8038e823bc404b78fb92efac661d9b249c334f94
 st.markdown(derechos,unsafe_allow_html=True)
