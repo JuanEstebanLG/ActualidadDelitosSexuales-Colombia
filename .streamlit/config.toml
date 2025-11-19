@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 [theme]
 base = "light"
-=======
 # .streamlit/config.toml
 
 [theme]
@@ -11,4 +9,3 @@ backgroundColor = "#0E1117"         # Fondo principal oscuro
 secondaryBackgroundColor = "#262730" # Fondo de paneles / sidebar
 textColor = "#FAFAFA"
 font = "sans serif"
->>>>>>> 525904f (Nuevos estilos y limpieza)
