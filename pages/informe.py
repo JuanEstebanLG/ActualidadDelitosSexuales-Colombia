@@ -97,4 +97,12 @@ for i in range(0, len(totales), n_cols):
             col.metric(f"Año {año}", round(totales[idx], 2), f"{int(deltas[idx])}%", border=True)
 
 st.markdown(metric_explanation, unsafe_allow_html=True)
+
+
+
+dp = st.selectbox("Seleccione el Departamento", informe_tendencia['DP'], index=0)
+fig = tendencias(dp)
+
+st.plotly_chart(fig, use_container_width=True)
+
 st.markdown(derechos,unsafe_allow_html=True)
