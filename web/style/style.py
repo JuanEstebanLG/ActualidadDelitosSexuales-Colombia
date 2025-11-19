@@ -411,51 +411,50 @@ descripcion_estilo = """
         </style>
         """
 
-metric_explanation = """
-        <style>
-        .metric-info-container {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+metric_explanation = """<style>
+.metric-info-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-        .metric-info-box {
-            background: linear-gradient(145deg, #1C1F24, #23272E);
-            color: #EAEAEA;
-            padding: 16px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            animation: metricFadeIn 0.6s ease-out forwards;
-            transform: translateY(8px);
-            opacity: 0;
-            transition: transform 1s ease, box-shadow 0.25s ease;
-        }
+.metric-info-box {
+    background: linear-gradient(145deg, #252A34, #313746); /* un poco más clara que el body */
+    color: #F3F3F3;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: metricFadeIn 0.6s ease-out forwards;
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform 0.8s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border-left: 4px solid #5BC0DE; 
+}
 
-        .metric-info-box:hover {
-            transform: translateY(4px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-        }
+.metric-info-box:hover {
+    transform: translateY(4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    border-left-color: #72D6F0;
+}
 
-        @keyframes metricFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+@keyframes metricFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 
-            
-        }
-        </style>
-
-        <div class="metric-info-container">
-            <div class="metric-info-box">
-                Los valores positivos en las anteriores métricas indican un aumento en los casos reportados en comparación con el año anterior; por otro lado, los valores negativos indican una disminución de los casos reportados.
-            </div>
-        </div>
+<div class="metric-info-container">
+    <div class="metric-info-box">
+        Los valores positivos en las anteriores métricas indican un aumento en los casos reportados en comparación con el año anterior; por otro lado, los valores negativos indican una disminución de los casos reportados. Estos resultados permiten identificar de manera rápida si la situación presenta una tendencia al alza o a la baja respecto al periodo previo. La correcta interpretación de estos signos es fundamental para comprender la evolución de los casos y apoyar el análisis de la información presentada.
+    </div>
+</div>
 """
