@@ -1,6 +1,6 @@
 <!-- Banner principal -->
 <p align="center">
-  <img src="resources/images/fondo_inicio.jpg" alt="Banner del proyecto" width="100%">
+  <img src="resources/images/foto_inicio.jpg" alt="Banner del proyecto" width="100%">
 </p>
 
 <h1 align="center">🕊️ ActualidadDelitosSexuales-Colombia</h1>
