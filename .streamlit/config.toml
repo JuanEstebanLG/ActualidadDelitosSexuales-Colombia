@@ -1,2 +1,11 @@
 [theme]
 base = "light"
+# .streamlit/config.toml
+
+[theme]
+base = "dark"  # Fuerza el modo oscuro
+primaryColor = "#FF4B4B"
+backgroundColor = "#0E1117"         # Fondo principal oscuro
+secondaryBackgroundColor = "#262730" # Fondo de paneles / sidebar
+textColor = "#FAFAFA"
+font = "sans serif"

@@ -85,7 +85,8 @@ figure_armas.update_layout(
 
 
 
-informe_violencia_a_la_mujer = df_informe[df_informe['GENERO'] == 'FEMENINO'].pivot_table(
+informe_violencia_a_la_mujer = df_informe[df_informe['GENERO' \
+''] == 'FEMENINO'].pivot_table(
     index='GENERO',
     columns='AÑO',
     values='CANTIDAD',

@@ -3,6 +3,7 @@ import folium as folium
 from streamlit_option_menu import option_menu
 from figures import *
 from web.style.style import *
+from web.style.style import hero_cards, home_styles, close_menu
 import pathlib, runpy, streamlit as st
 from pathlib import Path
 
@@ -109,6 +110,7 @@ home_styles = """
 ################################################################################################                           
                                     #  SIDEBAR CONFIGURATION  #
 ################################################################################################      
+st.markdown(close_menu, unsafe_allow_html=True)
 
 with st.sidebar:
     selected = option_menu(
@@ -122,34 +124,7 @@ with st.sidebar:
 if selected == "Home":
     
     st.markdown(home_styles, unsafe_allow_html=True)
-    st.markdown("""
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Informe Nacional sobre Delitos Sexuales en Colombia (2010–2025)</h1>
-            <h2>Una mirada integral hacia la comprensión y prevención</h2>
-            <p>
-            Este informe presenta un análisis detallado de los delitos sexuales cometidos en Colombia
-            durante los últimos quince años, utilizando datos oficiales y técnicas de análisis estadístico.
-            Su propósito es visibilizar la magnitud de esta problemática y ofrecer insumos para la toma
-            de decisiones orientadas a la prevención y la atención de las víctimas.
-            </p>
-            <br>
-            <p>
-            En el contexto colombiano, los delitos sexuales representan un fenómeno complejo que impacta
-            profundamente la estructura social y el bienestar de las comunidades. La persistencia de estos
-            casos exige una reflexión colectiva sobre las políticas de educación, justicia y equidad de género,
-            así como una revisión constante de las estrategias institucionales de protección y denuncia.
-            </p>
-        </div><div class="hero-side">
-            <h3>¿Por qué este estudio es importante?</h3>
-            <p>
-            Comprender las tendencias de los delitos sexuales permite fortalecer las políticas públicas
-            y enfocar esfuerzos en la protección de las víctimas, garantizando una Colombia más segura
-            y consciente del valor de la integridad y la dignidad humana.
-            </p>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(hero_cards,unsafe_allow_html=True)
 
     
 elif selected == "Dashboards":
@@ -231,13 +206,13 @@ elif selected == "About us":
     <div class="team-grid">
         <!-- Esteban -->
         <div class="card">
-            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1" class="card-image-top">
+            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1">
             <h3>Juan Esteban López Gómez</h3>
             <p>
                 ........
             </p>
             <div class="contact-icons">
-                <a href="mailto:juan.lopez@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/juanlopez/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
@@ -250,7 +225,7 @@ elif selected == "About us":
                 Mediante análisis, automatizaciones y reportes para la toma de decisiones y proyectos de investigación aplicada.
             </p>
             <div class="contact-icons">
-                <a href="mailto:milcuervo@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/milcuervo" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/miguelcuervoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
@@ -263,7 +238,7 @@ elif selected == "About us":
                 especializado en fortalecer controles internos, mejorar procesos y asegurar la calidad de la información financiera.
             </p>
             <div class="contact-icons">
-                <a href="mailto:majoca854@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
