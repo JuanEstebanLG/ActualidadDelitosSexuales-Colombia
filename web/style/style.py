@@ -327,7 +327,7 @@ info_team = """
         </div>
         <!-- Camilo -->
         <div class="card">
-            <img src="https://via.placeholder.com/150" alt="Foto 3">
+            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/Juan_Camilo.jpeg?raw=true" alt="Foto 3">
             <h3>Juan Camilo Loaiza</h3>
             <p>
                 Administrador financiero con 15 años de experiencia como auditor en diversas empresas, 
