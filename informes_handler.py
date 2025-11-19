@@ -91,3 +91,34 @@ informe_violencia_a_la_mujer = df_informe[df_informe['GENERO'] == 'FEMENINO'].pi
     values='CANTIDAD',
     aggfunc='sum',
 ).reset_index(drop=False)
+
+informe_violencia_a_la_mujer = df_informe[df_informe['GENERO'] == 'FEMENINO'].pivot_table(
+    index='GENERO',
+    columns='AÑO',
+    values='CANTIDAD',
+    aggfunc='sum',
+).reset_index(drop=False)
+
+
+informe_tendencia = df_informe.pivot_table(
+    index='DP',
+    columns='AÑO',
+    values='CANTIDAD',
+    aggfunc='sum'
+).reset_index(drop=False)
+
+def tendencias(departamento):
+
+    fila = informe_tendencia[informe_tendencia['DP'] == departamento]
+
+    fila_long = fila.melt(id_vars='DP', var_name='Año', value_name='Valor')
+
+    fig = px.line(
+        fila_long,
+        x='Año',
+        y='Valor',
+        title=f'Evolución por año - Departamento de {departamento}',
+        markers=True
+    )
+
+    return fig
