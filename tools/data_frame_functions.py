@@ -13,8 +13,8 @@ def return_deltas_violencia_mujer():
     deltas = []
 
 
-    for año in range(2020, 2026):
-        if año < 2025:
+    for año in range(2018, 2025):
+        if año < 2024:
             total = informe_violencia_a_la_mujer[año + 1] - informe_violencia_a_la_mujer[año]
             delta = round(total / informe_violencia_a_la_mujer[año] * 100, 2)
             totales.append(total)

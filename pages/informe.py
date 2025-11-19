@@ -70,7 +70,17 @@ with col_mapa_desc:
 
 st.divider()
 
-#Metricas - Pruebas
+col_armas_desc, col_armas = st.columns([0.3, 0.7], gap="small")
+
+with col_armas_desc:
+    st.title("Uso de Armas")
+    st.write("""Análisis de las armas más utilizadas en la comisión de delitos sexuales en Colombia. 
+             El gráfico de barras destaca el arma más empleada en comparación con otras armas secundarias, proporcionando una visión clara de las tendencias en el uso de armas en estos delitos.""")
+    
+with col_armas:
+    st.plotly_chart(armas_mas_usadas, use_container_width=True)
+
+st.divider()
 
 st.markdown("""<h2 style='text-align: center;'>Tendencia de Violencia contra la Mujer</h2>""", unsafe_allow_html=True)
 totales, deltas = return_deltas_violencia_mujer()
@@ -83,7 +93,7 @@ for i in range(0, len(totales), n_cols):
     for j, col in enumerate(cols):
         idx = i + j
         if idx < len(totales):
-            año = 2021 + idx  
+            año = 2019 + idx  
             col.metric(f"Año {año}", round(totales[idx], 2), f"{int(deltas[idx])}%", border=True)
 
 st.markdown(metric_explanation, unsafe_allow_html=True)

@@ -302,7 +302,7 @@ info_team = """
     <div class="team-grid">
         <!-- Esteban -->
         <div class="card">
-            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/foto_inicio.jpg" alt="Foto 1">
+            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/Esteban.jpg?raw=true" alt="Foto de Perfil, Juan Esteban López García">
             <h3>Juan Esteban López García</h3>
             <p>
                 Desarrollador de software enfocado en backend, con experiencia creando APIs y servicios robustos apoyado en el ecosistema de Spring y bases de datos relacionales. Trabajo con Java, Kotlin y Python, control de versiones con Git/GitHub y despliegue con Docker. Conocimientos en análisis de datos con herramientas como Pandas/Power BI para generar insights accionables.

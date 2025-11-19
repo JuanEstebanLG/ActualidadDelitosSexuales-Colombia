@@ -83,7 +83,11 @@ figure_armas.update_layout(
     uniformtext_mode='hide' # oculta texto si se superpone
 )
 
-
+informe_armas_mas_usadas = df_informe[df_informe['ARMAS'] != 'NO REPORTADO'].groupby('ARMAS')['CANTIDAD'].sum().sort_values(ascending= False).reset_index(drop= False)
+max_cantidad = informe_armas_mas_usadas['CANTIDAD'].max()
+informe_armas_mas_usadas['ES_MAX'] = informe_armas_mas_usadas['CANTIDAD'].apply(
+    lambda x: 'ARMA MAS USADA' if x == max_cantidad else 'ARMAS SECUNDARIAS'
+)
 
 informe_violencia_a_la_mujer = df_informe[df_informe['GENERO' \
 ''] == 'FEMENINO'].pivot_table(
