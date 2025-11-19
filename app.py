@@ -231,13 +231,13 @@ elif selected == "About us":
     <div class="team-grid">
         <!-- Esteban -->
         <div class="card">
-            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1" class="card-image-top">
+            <img src="resources\images\fondo_inicio.jpg" alt="Foto 1">
             <h3>Juan Esteban López Gómez</h3>
             <p>
                 ........
             </p>
             <div class="contact-icons">
-                <a href="mailto:juan.lopez@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/juanlopez/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
@@ -250,7 +250,7 @@ elif selected == "About us":
                 Mediante análisis, automatizaciones y reportes para la toma de decisiones y proyectos de investigación aplicada.
             </p>
             <div class="contact-icons">
-                <a href="mailto:milcuervo@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/milcuervo" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/miguelcuervoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
@@ -263,7 +263,7 @@ elif selected == "About us":
                 especializado en fortalecer controles internos, mejorar procesos y asegurar la calidad de la información financiera.
             </p>
             <div class="contact-icons">
-                <a href="mailto:majoca854@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
