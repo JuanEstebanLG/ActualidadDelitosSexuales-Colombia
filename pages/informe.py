@@ -12,7 +12,7 @@ st.markdown("""
         body{
             background-color: #0e1117;
             color: #EAEAEA;
-        }""", unsafe_allow_html=Truei)
+        }""", unsafe_allow_html=True)
 
 
 
