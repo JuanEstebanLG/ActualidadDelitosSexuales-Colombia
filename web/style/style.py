@@ -152,12 +152,13 @@ home_styles = """
 /* Fondo general */
 .stApp {
     background-color: #f4f4f4;
-    background-image: url("resources/images/fondo_inicio.jpg");
+    background-image: url("https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/foto_inicio.jpg?raw=true");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
+/* Contenedor principal */
 .hero {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -191,6 +192,7 @@ home_styles = """
     color: #333;
     line-height: 1.6;
     font-size: 1rem;
+    text-align: justify
 }
 
 /* Tarjeta lateral */
@@ -202,6 +204,7 @@ home_styles = """
     box-shadow: 0 4px 20px rgba(11, 41, 72, 0.2);
     transform: translateY(0);
     transition: all 0.4s ease;
+    text-align: justify
 }
 
 .hero-side:hover {
@@ -228,6 +231,115 @@ home_styles = """
 }
 </style>
 """
+
+info_team = """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    /* GRID DEL EQUIPO */
+    .team-grid {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    /* TARJETAS */
+    .card {
+        width: 320px;
+        padding: 25px;
+        border-radius: 25px;
+        backdrop-filter: blur(14px) saturate(150%);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.20);
+        text-align: center;
+        transition: all 0.35s ease;
+    }
+    .card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.30);
+    }
+    /* FOTOS */
+    .card img {
+        max-width: 160px;
+        max-height: 160px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 100%;
+        margin-bottom: 15px;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
+    }
+    /* NOMBRES */
+    .card h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: #111;
+    }
+    /* DESCRIPCIÓN */
+    .card p {
+        font-size: 15px;
+        text-align: justify;
+        line-height: 1.55;
+        color: #333;
+        margin-bottom: 14px;
+    }
+    /* ICONOS DE CONTACTO */
+    .contact-icons a {
+        margin: 0px 10px;
+        font-size: 22px;
+        color: #007aff;
+        transition: 0.25s ease;
+    }
+    .contact-icons a:hover {
+        color: #0051a8;
+        transform: scale(1.15);
+    }
+    </style>
+    <div class="team-grid">
+        <!-- Esteban -->
+        <div class="card">
+            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/Esteban.jpg?raw=true" alt="Foto de Perfil, Juan Esteban López García">
+            <h3>Juan Esteban López García</h3>
+            <p>
+                Desarrollador de software enfocado en backend, con experiencia creando APIs y servicios robustos apoyado en el ecosistema de Spring y bases de datos relacionales. Trabajo con Java, Kotlin y Python, control de versiones con Git/GitHub y despliegue con Docker. Conocimientos en análisis de datos con herramientas como Pandas/Power BI para generar insights accionables.
+            </p>
+            <div class="contact-icons">
+                <a href="https://github.com/JuanEstebanLG" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jlesteban3/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <!-- Miguel -->
+        <div class="card">
+            <img src="https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/miguel.jpg?raw=true" alt="Foto 2">
+            <h3>Miguel Angel Cuervo Espinosa</h3>
+            <p>
+                Analista de datos con formación en ingeniería y ciencias biológicas. Con experiencia en Python, Power BI y estadística para procesar, limpiar y visualizar datos complejos. 
+                Mediante análisis, automatizaciones y reportes para la toma de decisiones y proyectos de investigación aplicada.
+            </p>
+            <div class="contact-icons">
+                <a href="https://github.com/milcuervo" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/miguelcuervoe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <!-- Camilo -->
+        <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Foto 3">
+            <h3>Juan Camilo Loaiza</h3>
+            <p>
+                Administrador financiero con 15 años de experiencia como auditor en diversas empresas, 
+                especializado en fortalecer controles internos, mejorar procesos y asegurar la calidad de la información financiera.
+            </p>
+            <div class="contact-icons">
+                <a href="https://github.com/TU_USUARIO" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/juancamilo/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    """
 columna_izquierda_estilo = """
             <div style="
                 color:white;
@@ -299,51 +411,50 @@ descripcion_estilo = """
         </style>
         """
 
-metric_explanation = """
-        <style>
-        .metric-info-container {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+metric_explanation = """<style>
+.metric-info-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
-        .metric-info-box {
-            background: linear-gradient(145deg, #1C1F24, #23272E);
-            color: #EAEAEA;
-            padding: 16px 20px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            animation: metricFadeIn 0.6s ease-out forwards;
-            transform: translateY(8px);
-            opacity: 0;
-            transition: transform 1s ease, box-shadow 0.25s ease;
-        }
+.metric-info-box {
+    background: linear-gradient(145deg, #252A34, #313746); /* un poco más clara que el body */
+    color: #F3F3F3;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: metricFadeIn 0.6s ease-out forwards;
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform 0.8s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    border-left: 4px solid #5BC0DE; 
+}
 
-        .metric-info-box:hover {
-            transform: translateY(4px);
-            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
-        }
+.metric-info-box:hover {
+    transform: translateY(4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    border-left-color: #72D6F0;
+}
 
-        @keyframes metricFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+@keyframes metricFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 
-            
-        }
-        </style>
-
-        <div class="metric-info-container">
-            <div class="metric-info-box">
-                Los valores positivos en las anteriores métricas indican un aumento en los casos reportados en comparación con el año anterior; por otro lado, los valores negativos indican una disminución de los casos reportados.
-            </div>
-        </div>
+<div class="metric-info-container">
+    <div class="metric-info-box">
+        Los valores positivos en las anteriores métricas indican un aumento en los casos reportados en comparación con el año anterior; por otro lado, los valores negativos indican una disminución de los casos reportados. Estos resultados permiten identificar de manera rápida si la situación presenta una tendencia al alza o a la baja respecto al periodo previo. La correcta interpretación de estos signos es fundamental para comprender la evolución de los casos y apoyar el análisis de la información presentada.
+    </div>
+</div>
 """
