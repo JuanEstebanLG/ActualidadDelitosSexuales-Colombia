@@ -7,7 +7,7 @@ import folium
 figura = px.bar(informe_clasificacion_delitos_departamento, x='DP', y='CANTIDAD', title='Número de Delitos Sexuales por Departamento en Colombia (2025)',
             labels={'DP': '', 'CANTIDAD': 'Número de Delitos Sexuales'},
             color='CANTIDAD',
-            color_continuous_scale='Viridis')
+            color_continuous_scale='ice')
 
 
 informe_clasificacion_delitos_departamento['DP'] = informe_clasificacion_delitos_departamento['DP'].replace({
@@ -54,8 +54,8 @@ armas_mas_usadas.update_layout(
 
 figure_pie = px.pie(informe_grupo_mas_afectado,values = 'CANTIDAD', names = 'GRE', title = 'Grupo de Edad Más Afectado',
                     color_discrete_sequence=px.colors.sequential.Aggrnyl,
-                    width = 780,
-                    height = 500,
+                    width = 800,
+                    height = 600,
                     )
 
 
@@ -71,7 +71,7 @@ figure_pie.update_layout (
 
 
 genero_pie = px.pie(informe_genero_mas_afectado, values='CANTIDAD', names='GENERO',
-                    color_discrete_sequence=px.colors.sequential.RdBu, width=700, height=500)
+                    color_discrete_sequence=px.colors.sequential.RdBu, width=800, height=600)
 
 genero_pie.update_traces(
     textposition='inside',

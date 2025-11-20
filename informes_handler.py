@@ -137,7 +137,64 @@ def tendencias(departamento):
         x='Año',
         y='Valor',
         title=f'Evolución por año - Departamento de {departamento}',
-        markers=True
+        markers=True,
+        template='plotly_dark'
+    )
+
+    fig.add_vline(
+        x=2020,
+        line_width=2,
+        line_dash="dash",
+        line_color="crimson"
+    )
+
+    fig.add_vline(
+        x=2023,
+        line_width=2,
+        line_dash="dash",
+        line_color="crimson"
+    )
+
+    fig.add_annotation(
+        x=2020,
+        yref="paper",   
+        y=1.05,         
+        text="Inicio pandemia",
+        showarrow=False,
+        font=dict(size=12, color="crimson")
+    )
+
+    fig.add_annotation(
+        x=2023,
+        yref="paper",   
+        y=1.05,         
+        text="Fundación: Ministerio de Igualdad y Equidad",
+        showarrow=False,
+        font=dict(size=12, color="crimson")
+    )
+
+    fig.update_traces(
+        line=dict(width=3),
+        marker=dict(size=7)
+    )
+
+    fig.update_layout(
+        title_font=dict(size=20, family="Arial"),
+        xaxis_title="Año",
+        yaxis_title="Valor",
+        hovermode="x unified",
+        xaxis=dict(
+            showgrid=False,
+            dtick=1,          # un año por tick
+            tickangle=-45
+        ),
+        yaxis=dict(
+            zeroline=False,
+            gridcolor="rgba(0,0,0,0.1)"
+        ),
+        margin=dict(l=50, r=30, t=80, b=60),
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="rgba(0,0,0,0)",
     )
 
     return fig

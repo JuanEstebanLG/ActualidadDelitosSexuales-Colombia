@@ -113,18 +113,22 @@ with col_genero:
 st.markdown("""<br></br><h2 style='text-align: center;'>Tendencia de Violencia contra la Mujer</h2>""", unsafe_allow_html=True)
 totales, deltas = return_deltas_violencia_mujer()
 
+tendencias_mostrar = st.checkbox("Mostrar Métricas de Violencia contra la Mujer", value=True, key='toggle_metrics')
 
-n_cols = len(totales)
+if tendencias_mostrar:
 
-for i in range(0, len(totales), n_cols):
-    cols = st.columns(n_cols)
-    for j, col in enumerate(cols):
-        idx = i + j
-        if idx < len(totales):
-            año = 2019 + idx  
-            col.metric(f"Año {año}", round(totales[idx], 2), f"{int(deltas[idx])}%", border=True)
+    
+    n_cols = len(totales)
 
-st.markdown(metric_explanation, unsafe_allow_html=True)
+    for i in range(0, len(totales), n_cols):
+        cols = st.columns(n_cols)
+        for j, col in enumerate(cols):
+            idx = i + j
+            if idx < len(totales):
+                año = 2019 + idx  
+                col.metric(f"Año {año}", round(totales[idx]), f"{int(deltas[idx])}%", border=True)
+
+    st.markdown(metric_explanation, unsafe_allow_html=True)
 
 st.divider()
 st.title("Delitos Sexuales por Departamento - Tendencias 2010-2025")
