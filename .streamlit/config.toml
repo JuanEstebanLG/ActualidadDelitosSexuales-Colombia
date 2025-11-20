@@ -1,6 +1,3 @@
-[theme]
-base = "light"
-# .streamlit/config.toml
 
 [theme]
 base = "dark"  # Fuerza el modo oscuro

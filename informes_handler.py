@@ -3,6 +3,7 @@ import pandas as pd
 import geopandas as gpd
 from pandas_handler import clean_df
 
+
 df_informe = clean_df
 
 df_informe['DP'] = (
@@ -83,11 +84,25 @@ figure_armas.update_layout(
     uniformtext_mode='hide' # oculta texto si se superpone
 )
 
+############################ ARMAS MÁS USADAS ############################
 informe_armas_mas_usadas = df_informe[df_informe['ARMAS'] != 'NO REPORTADO'].groupby('ARMAS')['CANTIDAD'].sum().sort_values(ascending= False).reset_index(drop= False)
 max_cantidad = informe_armas_mas_usadas['CANTIDAD'].max()
 informe_armas_mas_usadas['ES_MAX'] = informe_armas_mas_usadas['CANTIDAD'].apply(
     lambda x: 'ARMA MAS USADA' if x == max_cantidad else 'ARMAS SECUNDARIAS'
 )
+
+############################ GRUPO DE EDAD MÁS AFECTADO ############################
+informe_grupo_mas_afectado = df_informe[df_informe['GRE'] != 'NO REPORTADO'].groupby('GRE')['CANTIDAD'].sum().sort_values(ascending=False)
+informe_grupo_mas_afectado = informe_grupo_mas_afectado.reset_index(drop = False)
+
+
+############################# VIOLENCIA A LA MUJER ############################
+
+#------------------------------ FEMENINO VS MASCULINO ------------------------------ (Motivación de la proxima consulta)
+
+
+informe_genero_mas_afectado = df_informe[(df_informe['GENERO'] != 'NO REPORTADO')  & (df_informe['GENERO'] != 'NO REPORTA')].groupby('GENERO')['CANTIDAD'].sum().sort_values(ascending=False).reset_index(drop = False)
+
 
 informe_violencia_a_la_mujer = df_informe[df_informe['GENERO' \
 ''] == 'FEMENINO'].pivot_table(

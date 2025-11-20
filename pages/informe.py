@@ -78,11 +78,39 @@ with col_armas_desc:
              El gráfico de barras destaca el arma más empleada en comparación con otras armas secundarias, proporcionando una visión clara de las tendencias en el uso de armas en estos delitos.""")
     
 with col_armas:
-    st.plotly_chart(armas_mas_usadas, use_container_width=True)
+    st.plotly_chart(armas_mas_usadas, width='stretch')
 
 st.divider()
 
-st.markdown("""<h2 style='text-align: center;'>Tendencia de Violencia contra la Mujer</h2>""", unsafe_allow_html=True)
+col_gre, col_gre_desc = st.columns([0.7, 0.3], gap="small")
+
+with col_gre:
+    st.plotly_chart(figure_pie, width='stretch')
+
+with col_gre_desc:
+    st.title("Grupo de Edad Más Afectado")
+    st.write("""Distribución de los delitos sexuales en Colombia según el grupo de edad de las víctimas. 
+             El gráfico circular ilustra qué grupos de edad son los más afectados, proporcionando una visión clara de las tendencias demográficas en la incidencia de estos delitos.""")    
+
+st.divider()
+################################ GÉNERO MÁS AFECTADO #################################################
+
+
+col_genero_desc, col_genero = st.columns([0.3, 0.7], gap="small")
+
+
+with col_genero_desc:
+    st.title("Delitos Sexuales por Género")
+    st.write("""Análisis de la distribución de delitos sexuales en Colombia según el género de las víctimas. 
+             El gráfico circular destaca la proporción de delitos cometidos contra diferentes géneros, proporcionando una visión clara de las tendencias de género en la incidencia de estos delitos.""")
+
+with col_genero:
+    st.plotly_chart(genero_pie, width='stretch')
+
+
+
+
+st.markdown("""<br></br><h2 style='text-align: center;'>Tendencia de Violencia contra la Mujer</h2>""", unsafe_allow_html=True)
 totales, deltas = return_deltas_violencia_mujer()
 
 
@@ -103,6 +131,6 @@ st.markdown(metric_explanation, unsafe_allow_html=True)
 dp = st.selectbox("Seleccione el Departamento", informe_tendencia['DP'], index=0)
 fig = tendencias(dp)
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(fig, width='stretch')
 
 st.markdown(derechos,unsafe_allow_html=True)

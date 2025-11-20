@@ -52,6 +52,39 @@ armas_mas_usadas.update_layout(
 )
 
 
+
+figure_pie = px.pie(informe_grupo_mas_afectado,values = 'CANTIDAD', names = 'GRE', title = 'Grupo de Edad Más Afectado',
+                    color_discrete_sequence=px.colors.sequential.Aggrnyl,
+                    width = 900,
+                    height = 800,
+                    )
+
+
+figure_pie.update_traces(
+    textposition='inside',
+    textinfo = 'percent+label',
+)
+
+figure_pie.update_layout (
+    uniformtext_minsize=18 ,
+    uniformtext_mode='hide'
+)
+
+
+genero_pie = px.pie(informe_genero_mas_afectado, values='CANTIDAD', names='GENERO',
+                    color_discrete_sequence=px.colors.sequential.RdBu, width=700, height=500)
+
+genero_pie.update_traces(
+    textposition='inside',
+    textinfo='percent+label',
+)
+
+genero_pie.update_layout(
+    uniformtext_minsize=18,
+    uniformtext_mode='hide'
+)
+
+
 def get_mapa():
 
     m = folium.Map(location=[4.5, -74.1], zoom_start=5)
