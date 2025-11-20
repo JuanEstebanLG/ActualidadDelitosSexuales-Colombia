@@ -126,7 +126,8 @@ for i in range(0, len(totales), n_cols):
 
 st.markdown(metric_explanation, unsafe_allow_html=True)
 
-
+st.divider()
+st.title("Delitos Sexuales por Departamento - Tendencias 2010-2025")
 
 dp = st.selectbox("Seleccione el Departamento", informe_tendencia['DP'], index=0)
 fig = tendencias(dp)
