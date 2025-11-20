@@ -1,7 +1,6 @@
 from informes_handler import *
 from pandas_handler import *
-import pandas as pd
-import streamlit as st
+
 
 informe_violencia_a_la_mujer = informe_violencia_a_la_mujer.reset_index(drop=True)
 

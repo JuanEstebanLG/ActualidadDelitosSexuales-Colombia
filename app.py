@@ -5,7 +5,6 @@ from figures import *
 from web.style.style import *
 from web.style.style import hero_cards, home_styles, close_menu, info_team
 import pathlib, runpy, streamlit as st
-from pathlib import Path
 
 
 ################################################################################################                           

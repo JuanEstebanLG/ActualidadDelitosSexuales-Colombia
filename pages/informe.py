@@ -32,7 +32,7 @@ col1, col2 = st.columns([0.65, 0.35], gap="small")
 with col1:
     st.markdown(columna_izquierda_estilo, unsafe_allow_html=True)
 
-    st.dataframe(clean_df.head(7), width='stretch')
+    st.dataframe(clean_df, width='stretch')
 
 
 

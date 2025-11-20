@@ -1,6 +1,5 @@
 import pandas as pd
 import plotly.express as px
-import geopandas as gpd
 from informes_handler import *
 from pandas_handler import geo_url
 import folium
@@ -55,8 +54,8 @@ armas_mas_usadas.update_layout(
 
 figure_pie = px.pie(informe_grupo_mas_afectado,values = 'CANTIDAD', names = 'GRE', title = 'Grupo de Edad Más Afectado',
                     color_discrete_sequence=px.colors.sequential.Aggrnyl,
-                    width = 900,
-                    height = 800,
+                    width = 780,
+                    height = 500,
                     )
 
 
@@ -66,7 +65,7 @@ figure_pie.update_traces(
 )
 
 figure_pie.update_layout (
-    uniformtext_minsize=18 ,
+    uniformtext_minsize=16,
     uniformtext_mode='hide'
 )
 
