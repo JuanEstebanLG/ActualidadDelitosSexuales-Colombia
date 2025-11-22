@@ -13,7 +13,7 @@ import pathlib, runpy, streamlit as st
 
 
 st.set_page_config(page_title="Análisis de Delitos Sexuales en Colombia", layout="wide", initial_sidebar_state="collapsed",
-                   page_icon=":bar_chart:")
+                   page_icon="resources\images\colombia.ico")
 st.markdown("""
     <style>
     [data-testid="stSidebarNav"] {display: none;}
