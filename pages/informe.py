@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_folium import st_folium
 from pandas_handler import clean_df
 from informes_handler import *
-from web.style.style import  main_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, violencia_genero, boxes
+from web.style.style import main_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, violencia_genero, boxes
 from figures import *
 from tools.data_frame_functions import return_deltas_violencia_mujer
 
