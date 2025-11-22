@@ -2,23 +2,13 @@ import streamlit as st
 from streamlit_folium import st_folium
 from pandas_handler import clean_df
 from informes_handler import *
-from web.style.style import titlo_principal_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, boxes
+from web.style.style import  main_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, violencia_genero, boxes
 from figures import *
 from tools.data_frame_functions import return_deltas_violencia_mujer
 
 
-st.markdown("""
-    <style>
-        body{
-            background-color: #0e1117;
-            color: #EAEAEA;
-        }""", unsafe_allow_html=True)
-
-
-
-# Título principal estilizado
-st.markdown(titlo_principal_estilo, unsafe_allow_html=True
-)
+# Hero Principal
+st.markdown(main_estilo, unsafe_allow_html=True, width='stretch')
 
 #estilo cajas
 st.markdown(h3_boxes, unsafe_allow_html=True)
@@ -32,7 +22,7 @@ col1, col2 = st.columns([0.65, 0.35], gap="small")
 with col1:
     st.markdown(columna_izquierda_estilo, unsafe_allow_html=True)
 
-    st.dataframe(clean_df, width='stretch')
+    st.dataframe(clean_df.head(6), width='stretch')
 
 
 
@@ -89,8 +79,8 @@ with col_gre:
 
 with col_gre_desc:
     st.title("Grupo de Edad Más Afectado")
-    st.write("""Distribución de los delitos sexuales en Colombia según el grupo de edad de las víctimas. 
-             El gráfico circular ilustra qué grupos de edad son los más afectados, proporcionando una visión clara de las tendencias demográficas en la incidencia de estos delitos.""")    
+    st.write("""Distribución de los delitos sexuales en Colombia según el grupo de edad de las víctimas. Este gráfico circular muestra qué rangos etarios concentran la mayor carga de casos, evidenciando qué grupos poblacionales se encuentran en mayor situación de vulnerabilidad. 
+             La visualización permite identificar tendencias demográficas críticas, como la afectación en niñas, niños, adolescentes, personas adultas o personas mayores, y aporta insumos esenciales para el diseño de acciones preventivas, programas de protección focalizada y políticas públicas que respondan a las necesidades específicas de cada etapa del ciclo de vida.""")    
 
 st.divider()
 ################################ GÉNERO MÁS AFECTADO #################################################
@@ -101,14 +91,17 @@ col_genero_desc, col_genero = st.columns([0.3, 0.7], gap="small")
 
 with col_genero_desc:
     st.title("Delitos Sexuales por Género")
-    st.write("""Análisis de la distribución de delitos sexuales en Colombia según el género de las víctimas. 
-             El gráfico circular destaca la proporción de delitos cometidos contra diferentes géneros, proporcionando una visión clara de las tendencias de género en la incidencia de estos delitos.""")
+    st.write("""Análisis de la distribución de delitos sexuales en Colombia según el género de las víctimas. Este gráfico circular permite identificar con claridad qué géneros concentran la mayor proporción de casos reportados, visibilizando posibles desigualdades y patrones de victimización diferenciada. Al observar estas proporciones, se facilita la comprensión de cómo el género se relaciona con la incidencia de los delitos sexuales, lo que resulta clave para orientar estrategias de prevención, atención integral y formulación de políticas públicas con enfoque de género.""")
 
 with col_genero:
     st.plotly_chart(genero_pie, width='stretch')
 
 
+st.divider()
+################################ TENDENCIA VIOLENCIA CONTRA LA MUJER #################################################
 
+
+st.markdown(violencia_genero, unsafe_allow_html=True)
 
 st.markdown("""<br></br><h2 style='text-align: center;'>Tendencia de Violencia contra la Mujer</h2>""", unsafe_allow_html=True)
 totales, deltas = return_deltas_violencia_mujer()

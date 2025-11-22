@@ -1,17 +1,155 @@
 def boxes(mayor, menor, mediana):
-    return """
+    return (
+"""
+<style>
+.stats_container{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 16px;
+margin: 10px 0 18px 0;
+width: 100%;
+}
+
+.stat_box{
+background: #2e3441;
+border-radius: 16px;
+border: 1px solid rgba(148,163,184,0.35);
+padding: 16px 18px;
+box-shadow: 0 12px 18px rgba(0,0,0,0.2);
+display: flex;
+flex-direction: column;
+gap: 4px;
+position: relative;
+overflow: hidden;
+transform: translateY(12px) scale(0.97);
+opacity: 0.5;
+animation: statsFloatIn 0.75s ease-out forwards;
+}
+
+.stat_box::before{
+content: "";
+position: absolute;
+inset: -40%;
+background:#101827;
+opacity: 0.5;
+pointer-events: none;
+z-index: 0;
+}
+
+.stat_box:nth-child(1){
+animation-delay: 0.08s;
+}
+.stat_box:nth-child(2){
+animation-delay: 0.18s;
+}
+.stat_box:nth-child(3){
+animation-delay: 0.28s;
+}
+
+.stat_title{
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 0.09em;
+color: #9CA3AF;
+position: relative;
+z-index: 1;
+}
+
+.stat_value{
+font-size: 1.25rem;
+font-weight: 700;
+color: #F9FAFB;
+margin-top: 2px;
+position: relative;
+z-index: 1;
+}
+
+.stat_value span{
+font-weight: 400;
+font-size: 0.9rem;
+color: #E5E7EB;
+}
+
+.stat_hint{
+font-size: 0.8rem;
+color: #D1D5DB;
+margin-top: 4px;
+position: relative;
+z-index: 1;
+}
+
+.stat_box_mayor .stat_value{
+color: #F97373;
+}
+
+.stat_box_menor .stat_value{
+color: #22D3EE;
+}
+
+.stat_box_mediana .stat_value{
+color: #A5B4FC;
+}
+
+.stat_box:hover{
+transform: translateY(0px) scale(1.01);
+border-color: rgba(129,140,248,0.95);
+transition:
+transform 0.18s ease,
+box-shadow 0.18s ease,
+border-color 0.18s ease;
+}
+
+/* Animación de entrada */
+@keyframes statsFloatIn{
+from{
+opacity: 0;
+transform: translateY(18px) scale(0.96);
+}
+to{
+opacity: 1;
+transform: translateY(0) scale(1);
+}
+
+/* Responsivo suave */
+@media (max-width: 600px){
+.stat_box{
+padding: 14px 14px;
+border-radius: 14px;
+}
+}
+}
+</style>
+
 <div class="stats_container">
-    <h3 class='h3_boxes'>
-        Más Delitos<br><span>{departamento_mayor}</span>
-    </h3>
-    <h3 class='h3_boxes'>
-        Menos Delitos<br><span>{departamento_menor}</span>
-    </h3>
-    <h3 class='h3_boxes'>
-        Mediana de Delitos<br><span>{mediana}</span>
-    </h3>
+
+<div class="stat_box stat_box_mayor">
+<div class="stat_title">Más delitos reportados</div>
+<div class="stat_value">""" + str(mayor) + """</div>
+<div class="stat_hint">
+Departamento con el número más alto de casos registrados en el periodo analizado.
 </div>
-""".format(departamento_mayor=mayor, departamento_menor=menor, mediana=mediana)
+</div>
+
+<div class="stat_box stat_box_menor">
+<div class="stat_title">Menos delitos reportados</div>
+<div class="stat_value">""" + str(menor) + """</div>
+<div class="stat_hint">
+Departamento con el menor número de casos en términos absolutos dentro del dataset.
+</div>
+</div>
+
+<div class="stat_box stat_box_mediana">
+<div class="stat_title">Mediana de delitos</div>
+<div class="stat_value">""" + str(mediana) + """</div>
+<div class="stat_hint">
+Punto medio de la distribución: la mitad de los departamentos reporta más casos y la otra mitad menos.
+</div>
+</div>
+
+</div>
+"""
+    )
+
 
 h3_boxes = """
 <style>
@@ -29,7 +167,7 @@ h3_boxes = """
 /* ===== Tarjetas ===== */
 .h3_boxes {
     position: relative;
-    background: #1f1f22;               /* fondo oscuro elegante */
+    background: #1f1f22;               
     color: #EAEAEA;
     text-align: center;
     font-family: "Segoe UI", Roboto, sans-serif;
@@ -37,7 +175,7 @@ h3_boxes = """
     line-height: 1.4;
     border-radius: 14px;
     padding: 25px 45px;
-    min-width: 240px;                  /* mayor ancho */
+    min-width: 240px;                  
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
     transition: all 0.35s ease;
     animation: fadeIn 1s ease-in-out;
@@ -61,7 +199,7 @@ h3_boxes = """
     margin-top: 6px;
     font-weight: 600;
     font-size: 1.35em;
-    color: #A8D0E6;                     /* azul acero */
+    color: #A8D0E6;                    
     position: relative;
     z-index: 1;
 }
@@ -69,7 +207,7 @@ h3_boxes = """
 
 /* ===== Animaciones ===== */
 
-/* Línea de enfoque (entra suavemente desde abajo) */
+/* Línea de enfoque */
 .h3_boxes::after {
     content: "";
     position: absolute;
@@ -149,7 +287,7 @@ close_menu = """
 
 home_styles = """
 <style>
-/* Fondo general */
+
 .stApp {
     background-color: #f4f4f4;
     background-image: url("https://github.com/JuanEstebanLG/ActualidadDelitosSexuales-Colombia/blob/Main/resources/images/foto_inicio.jpg?raw=true");
@@ -158,7 +296,7 @@ home_styles = """
     background-attachment: fixed;
 }
 
-/* Contenedor principal */
+
 .hero {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -173,7 +311,7 @@ home_styles = """
     animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Texto principal */
+
 .hero-text h1 {
     color: #0B2948;
     font-size: 2rem;
@@ -224,7 +362,7 @@ home_styles = """
     line-height: 1.5;
 }
 
-/* Animaciones */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
@@ -343,7 +481,7 @@ info_team = """
 columna_izquierda_estilo = """
             <div style="
                 color:white;
-                background-color:#2F4F4F;
+                background-color:rgb(65 76 101);
                 text-align: center;
                 border: 1px solid #1C1C1C;
                 border-radius: 10px;
@@ -355,19 +493,478 @@ columna_izquierda_estilo = """
             </div>
             """
 
-titlo_principal_estilo =   """
-        <div style="
-            background: #020024;
-            background: linear-gradient(90deg,rgba(2, 0, 36, 1) 41%, rgba(9, 9, 121, 0.99) 100%, rgba(0, 212, 255, 0.58) 100%);
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            color: white;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-            ">
-            <h2 style="margin: 0;">📊 Información General</h2>
-        </div>
-        """
+
+
+
+main_estilo = """
+<style>
+:root {
+    --bg-dark: #0E1117;
+    --bg-card: #23272E;
+    --bg-hero: #111827;
+    --accent: #6366F1;
+    --accent-soft: rgba(99, 102, 241, 0.18);
+    --text-main: #E5E7EB;
+    --text-muted: #9CA3AF;
+}
+
+/* Scroll suave en toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fondo general oscuro (opcional, si tu app ya lo maneja puedes omitir esto) */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+/* Contenedor principal de la primera impresión */
+.first-impression-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    box-sizing: border-box;
+    background:
+        radial-gradient(circle at top left, #1F2937 0, #020617 45%, #020617 100%);
+    color: var(--text-main);
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+/* Capa de “brillo” suave, ajustada a tema oscuro */
+.first-impression-glow {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(99, 102, 241, 0.35), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(56, 189, 248, 0.30), transparent 55%);
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+/* Contenido interno con grid */
+.first-impression-content {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+    gap: 3rem;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Bloque de texto principal */
+.first-impression-text {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.first-impression-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(148, 163, 184, 0.6);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
+    margin-bottom: 0.9rem;
+}
+
+.first-impression-eyebrow-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent);
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.4);
+}
+
+.first-impression-title {
+    font-size: clamp(2.3rem, 3.5vw, 3.1rem);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+    color: #F9FAFB;
+}
+
+.first-impression-highlight {
+    background: linear-gradient(135deg, #6366F1, #22D3EE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.first-impression-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 34rem;
+}
+
+/* Chips de contexto */
+.first-impression-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+}
+
+.first-impression-chip {
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    color: #E5E7EB;
+}
+
+/* CTA principal */
+.first-impression-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.9rem;
+}
+
+.first-impression-cta-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, var(--accent), #4F46E5);
+    color: white;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.3s ease;
+}
+
+.first-impression-cta-main span {
+color: white;}
+
+.first-impression-cta-main span.icon {
+    font-size: 1.1rem;
+    transform: translateY(1px);
+}
+
+.first-impression-cta-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.95);
+    background: linear-gradient(135deg, #4F46E5, #22D3EE);
+}
+
+.first-impression-cta-secondary {
+    font-size: 0.88rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--text-muted);
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.first-impression-cta-secondary:hover {
+    background: rgba(31, 41, 55, 0.95);
+    border-color: rgba(148, 163, 184, 1);
+    transform: translateY(-1px);
+}
+
+/* Panel derecho tipo “card de resumen” */
+.first-impression-panel {
+    background: rgba(17, 24, 39, 0.95);
+    border-radius: 24px;
+    padding: 1.4rem 1.5rem 1.5rem;
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.95),
+        0 0 0 1px rgba(31, 41, 55, 0.9);
+    backdrop-filter: blur(18px);
+    animation: fadeInRight 0.9s ease forwards;
+    opacity: 0;
+}
+
+.first-impression-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.first-impression-panel-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+}
+
+.first-impression-panel-tag {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: #E0F2FE;
+    font-weight: 600;
+}
+
+.first-impression-panel-metric {
+    margin-top: 0.4rem;
+    margin-bottom: 0.85rem;
+}
+
+.first-impression-panel-metric-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 0.1rem;
+}
+
+.first-impression-panel-metric-value {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #F9FAFB;
+}
+
+.first-impression-panel-metric-delta {
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+    color: #dc143c;
+}
+
+.first-impression-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.9rem 0 1rem;
+}
+
+.first-impression-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(31, 41, 55, 0.95);
+    color: #E5E7EB;
+}
+
+/* Pie del panel */
+.first-impression-panel-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px dashed rgba(75, 85, 99, 0.9);
+}
+
+.first-impression-panel-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: #16A34A;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.5);
+}
+
+.first-impression-panel-footer-text {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* Indicador de scroll hacia abajo */
+.first-impression-scroll-indicator {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    opacity: 0.9;
+}
+
+.first-impression-scroll-line {
+    width: 1px;
+    height: 36px;
+    border-radius: 999px;
+    background: linear-gradient(to bottom, rgba(148, 163, 184, 0.3), var(--accent));
+    animation: scrollPulse 1.7s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scrollPulse {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .first-impression-wrapper {
+        padding: 3.5rem 1.25rem 3rem;
+        border-radius: 0 0 24px 24px;
+    }
+
+    .first-impression-content {
+        grid-template-columns: 1fr;
+        gap: 2.4rem;
+    }
+
+    .first-impression-panel {
+        order: -1;
+    }
+
+    .first-impression-subtitle {
+        max-width: 100%;
+    }
+}
+</style>
+
+<section class="first-impression-wrapper" id="first-impression">
+<div class="first-impression-glow"></div>
+
+<div class="first-impression-content">
+<div class="first-impression-text">
+<div class="first-impression-eyebrow">
+<span class="first-impression-eyebrow-dot"></span>
+<span>Visión general del informe</span>
+</div>
+
+<h1 class="first-impression-title">
+Análisis crítico de los
+<span class="first-impression-highlight">delitos sexuales en Colombia</span>
+hasta 2025.
+</h1>
+
+<p class="first-impression-subtitle">
+Una plataforma interactiva que transforma datos oficiales en evidencia clara para la
+toma de decisiones, el diseño de políticas públicas y la protección de las víctimas.
+</p>
+
+<div class="first-impression-chips">
+<span class="first-impression-chip">Cobertura nacional 2010–2025</span>
+<span class="first-impression-chip">Análisis por departamento y municipio</span>
+<span class="first-impression-chip">Enfoque en violencia contra la mujer</span>
+</div>
+
+<div class="first-impression-actions">
+<a href="#contenido-principal" class="first-impression-cta-main">
+<span>Explorar el informe</span>
+<span class="icon">↓</span>
+</a>
+<a href="#contenido-principal" class="first-impression-cta-secondary">
+<span>Ver métricas clave</span>
+</a>
+</div>
+</div>
+
+<aside class="first-impression-panel">
+<div class="first-impression-panel-header">
+<span class="first-impression-panel-title">Vista rápida</span>
+<span class="first-impression-panel-tag">Actualizado 2025</span>
+</div>
+
+<div class="first-impression-panel-metric">
+<div class="first-impression-panel-metric-label">
+Casos registrados (Mayo 2025)
+</div>
+<div class="first-impression-panel-metric-value">
+9&nbsp;587
+</div>
+<div class="first-impression-panel-metric-delta">
+<span>▼ -62.1%</span>
+<span>vs. 2024</span>
+</div>
+</div>
+
+<div class="first-impression-badge-row">
+<span class="first-impression-badge">Distribución por edad y género</span>
+<span class="first-impression-badge">Comparación interanual</span>
+<span class="first-impression-badge">Mapas y visualizaciones interactivas</span>
+</div>
+
+<div class="first-impression-panel-footer">
+<span class="first-impression-panel-dot"></span>
+<span class="first-impression-panel-footer-text">
+Los valores mostrados son demostrativos. Las cifras reales se cargan desde el dataset oficial.
+</span>
+</div>
+</aside>
+</div>
+
+<div class="first-impression-scroll-indicator">
+<span>Desplázate</span>
+<div class="first-impression-scroll-line"></div>
+</div>
+</section>
+
+<div id="contenido-principal"></div>
+"""
+
 
 
 
@@ -395,12 +992,12 @@ descripcion_estilo = """
             </div>
             <style>
             .descripcion-hero{
-            background: linear-gradient(145deg, #1C1F24, #23272E);
-            border: 1px solid #1C1C1C;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
-            animation: fadeIn 1s ease-in-out;
+                background: #2e3441;
+                border: 1px solid #1C1C1C;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+                animation: fadeIn 1s ease-in-out;
             }
 
             @keyframes fadeIn {
@@ -458,3 +1055,70 @@ metric_explanation = """<style>
     </div>
 </div>
 """
+
+violencia_genero = """
+<style>
+.violencia-wrapper{
+display:flex;
+flex-wrap:wrap;
+gap:16px;
+margin:10px 0 18px 0;
+width:100%;
+}
+
+.violencia-col{
+flex:1 1 280px;
+background-color:#2e3441;
+border-radius:12px;
+border:1px solid #272B36;
+padding:14px 16px;
+box-sizing:border-box;
+transition:background-color 0.15s ease,border-color 0.15s ease,transform 0.15s ease;
+}
+
+.violencia-col:hover{
+background-color:#151B2B;
+border-color:#3B4253;
+transform:translateY(-1px);
+}
+
+.violencia-title{
+font-size:0.84rem;
+text-transform:uppercase;
+letter-spacing:0.09em;
+color:#9CA3AF;
+margin:0 0 6px 0;
+}
+
+.violencia-text{
+margin:0;
+font-size:0.92rem;
+line-height:1.6;
+color:#E5E7EB;
+text-align:justify;
+}
+
+@media (max-width:700px){
+.violencia-wrapper{
+flex-direction:column;
+}
+}
+</style>
+
+<div class="violencia-wrapper">
+<div class="violencia-col">
+<p class="violencia-title">Panorama general</p>
+<p class="violencia-text">
+Como se puede evidenciar en el anterior gráfico, la violencia contra la mujer es un problema persistente y generalizado que afecta a mujeres de todas las edades, orígenes y condiciones sociales en Colombia.
+</p>
+</div>
+
+<div class="violencia-col">
+<p class="violencia-title">Implicaciones y necesidad de análisis</p>
+<p class="violencia-text">
+Este fenómeno incluye diversas formas de abuso, como la violencia física, sexual, psicológica y económica, y tiene profundas repercusiones en la salud, el bienestar y los derechos humanos de las mujeres. Es por ello que es necesario ahondar en las tendencias de esta problemática para diseñar estrategias efectivas de prevención y apoyo a las víctimas.
+</p>
+</div>
+</div>
+"""
+

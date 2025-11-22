@@ -78,8 +78,13 @@ genero_pie.update_traces(
     textinfo='percent+label',
 )
 
+genero_pie.update_legends(
+    title_text='Género Reportado',
+    x = 0,
+)
+
 genero_pie.update_layout(
-    uniformtext_minsize=18,
+    uniformtext_minsize=16,
     uniformtext_mode='hide'
 )
 
