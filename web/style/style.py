@@ -1008,6 +1008,307 @@ descripcion_estilo = """
         </style>
         """
 
+
+############################# USO DE ARMAS #############################
+
+componente_armas = """
+<style>
+
+.armas-card {
+background: linear-gradient(135deg, rgba(248, 113, 113, 0.22), rgba(255, 255, 255, 0.02));
+border: 1px solid rgba(248, 113, 113, 0.70);
+padding: 28px;
+border-radius: 18px;
+color: #e5e7eb;
+font-family: 'Segoe UI', sans-serif;
+backdrop-filter: blur(4px);
+animation: armasFade 1.2s ease forwards;
+opacity: 0;
+transform: translateY(20px);
+transition: transform .4s ease, box-shadow .4s ease;
+}
+.armas-card:hover {
+transform: translateY(4px);
+box-shadow: 0 8px 22px rgba(248, 113, 113, 0.40);
+}
+
+.armas-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: #f9fafb;
+}
+
+.armas-line {
+width: 70px;
+height: 3px;
+background: linear-gradient(90deg, #fee2e2, #f97373, #ef4444);
+border-radius: 20px;
+margin: 8px 0 22px 0;
+animation: expandLine 1.4s ease-out forwards;
+transform-origin: left;
+opacity: 0;
+}
+
+.armas-text {
+font-size: 1.04rem;
+line-height: 1.65;
+color: #e5e7eb;
+text-align: justify;
+}
+
+@keyframes armasFade {
+to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+0% { transform: scaleX(0); opacity: 0; }
+100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="armas-card">
+<div class="armas-title">Uso de Armas</div>
+<div class="armas-line"></div>
+
+<div class="armas-text">
+El análisis del uso de armas en delitos sexuales permite comprender las dinámicas de coerción y 
+poder presentes en estos casos. La comparación entre armas más utilizadas y aquellas secundarias 
+revela patrones importantes sobre los métodos empleados para intimidar o someter a las víctimas.
+<br><br>
+Esta información es esencial para fortalecer medidas de prevención, ajustar protocolos de seguridad 
+y orientar políticas públicas que reduzcan los factores de riesgo asociados al uso de armas 
+en contextos de violencia sexual.
+</div>
+</div>
+"""
+
+
+############################# GRUPO ETARIO MÁS AFECTADO #############################
+
+componente_edad = """
+<style>
+
+.edad-card {
+background: linear-gradient(135deg, rgba(252, 211, 77, 0.22), rgba(255, 255, 255, 0.02));
+border: 1px solid rgba(252, 211, 77, 0.70);
+padding: 28px;
+border-radius: 18px;
+color: #e5e7eb;
+font-family: 'Segoe UI', sans-serif;
+backdrop-filter: blur(4px);
+animation: edadFade 1.2s ease forwards;
+opacity: 0;
+transform: translateY(20px);
+transition: transform .4s ease, box-shadow .4s ease;
+}
+.edad-card:hover {
+transform: translateY(4px);
+box-shadow: 0 8px 22px rgba(252, 211, 77, 0.40);
+}
+
+.edad-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: #f9fafb;
+}
+
+.edad-line {
+width: 70px;
+height: 3px;
+background: linear-gradient(90deg, #fef9c3, #fde68a, #facc15);
+border-radius: 20px;
+margin: 8px 0 22px 0;
+animation: expandLine 1.4s ease-out forwards;
+transform-origin: left;
+opacity: 0;
+}
+
+.edad-text {
+font-size: 1.04rem;
+line-height: 1.65;
+text-align: justify;
+color: #e5e7eb;
+}
+
+@keyframes edadFade {
+to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+0% { transform: scaleX(0); opacity: 0; }
+100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="edad-card">
+<div class="edad-title">Grupo de Edad Más Afectado</div>
+<div class="edad-line"></div>
+
+<div class="edad-text">
+La distribución de los delitos sexuales por edad evidencia qué grupos poblacionales se encuentran en 
+mayor situación de vulnerabilidad. Esta información permite identificar si niñas, niños, adolescentes, 
+personas adultas o mayores concentran la mayor carga de victimización.
+<br><br>
+Analizar estos rangos etarios es crucial para comprender tendencias demográficas críticas y 
+desarrollar programas de acompañamiento, protección y prevención ajustados a cada etapa del ciclo de vida.
+</div>
+</div>
+"""
+
+
+############################# MAPA DE DELITOS SEXUALES EN COLOMBIA #############################
+
+componente_mapa = """
+<style>
+
+.mapa-card {
+background: linear-gradient(135deg, rgba(74, 222, 128, 0.22), rgba(255, 255, 255, 0.02));
+border: 1px solid rgba(74, 222, 128, 0.70);
+padding: 28px;
+border-radius: 18px;
+color: #e5e7eb;
+font-family: 'Segoe UI', sans-serif;
+backdrop-filter: blur(4px);
+animation: mapaFade 1.2s ease forwards;
+opacity: 0;
+transform: translateY(20px);
+transition: transform .4s ease, box-shadow .4s ease;
+}
+.mapa-card:hover {
+transform: translateY(4px);
+box-shadow: 0 8px 22px rgba(74, 222, 128, 0.40);
+}
+
+.mapa-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: #f9fafb;
+}
+
+.mapa-line {
+width: 70px;
+height: 3px;
+background: linear-gradient(90deg, #dcfce7, #4ade80, #16a34a);
+border-radius: 20px;
+margin: 8px 0 22px 0;
+animation: expandLine 1.4s ease-out forwards;
+transform-origin: left;
+opacity: 0;
+}
+
+.mapa-text {
+font-size: 1.04rem;
+line-height: 1.65;
+text-align: justify;
+color: #e5e7eb;
+}
+
+@keyframes mapaFade {
+to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+0% { transform: scaleX(0); opacity: 0; }
+100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="mapa-card">
+<div class="mapa-title">Mapa de Delitos Sexuales en Colombia</div>
+<div class="mapa-line"></div>
+
+<div class="mapa-text">
+La distribución geográfica de los delitos sexuales permite identificar zonas críticas donde la 
+incidencia es mayor y donde la presencia institucional debe ser reforzada. Los departamentos con 
+mayor intensidad en tonalidades más marcadas indican una carga significativa de casos reportados.
+<br><br>
+Esta lectura espacial facilita entender cómo factores territoriales, sociales y económicos influyen 
+en la ocurrencia de estos delitos, permitiendo orientar estrategias diferenciales basadas en la 
+realidad de cada región del país.
+</div>
+</div>
+"""
+
+
+############################# DELITOS SEXUALES POR GÉNERO #############################
+
+componente_genero = """
+<style>
+
+.genero-card {
+background: linear-gradient(135deg, rgba(96, 165, 250, 0.22), rgba(255, 255, 255, 0.02));
+border: 1px solid rgba(96, 165, 250, 0.70);
+padding: 28px;
+border-radius: 18px;
+color: #e5e7eb;
+font-family: 'Segoe UI', sans-serif;
+backdrop-filter: blur(4px);
+animation: generoFade 1.2s ease forwards;
+opacity: 0;
+transform: translateY(20px);
+transition: transform .4s ease, box-shadow .4s ease;
+}
+.genero-card:hover {
+transform: translateY(4px);
+box-shadow: 0 8px 22px rgba(96, 165, 250, 0.40);
+}
+
+.genero-title {
+font-size: 1.8rem;
+font-weight: 700;
+color: #f9fafb;
+}
+
+.genero-line {
+width: 70px;
+height: 3px;
+background: linear-gradient(90deg, #dbeafe, #60a5fa, #2563eb);
+border-radius: 20px;
+margin: 8px 0 22px 0;
+animation: expandLine 1.4s ease-out forwards;
+transform-origin: left;
+opacity: 0;
+}
+
+.genero-text {
+font-size: 1.04rem;
+line-height: 1.65;
+text-align: justify;
+color: #e5e7eb;
+}
+
+@keyframes generoFade {
+to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+0% { transform: scaleX(0); opacity: 0; }
+100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="genero-card">
+<div class="genero-title">Delitos Sexuales por Género</div>
+<div class="genero-line"></div>
+
+<div class="genero-text">
+La distribución de los delitos sexuales según el género de las víctimas revela patrones profundos 
+de desigualdad y vulnerabilidad. Las cifras permiten identificar qué géneros soportan la mayor 
+proporción de casos, así como posibles variaciones y brechas en la victimización.
+<br><br>
+Comprender esta distribución es fundamental para visibilizar realidades que suelen permanecer 
+ocultas y para orientar estrategias efectivas de prevención, atención integral y construcción 
+de políticas públicas con un enfoque de género que responda a las necesidades reales de cada población.
+</div>
+</div>
+"""
+
+
+############################## EXPLICACION METRICAS ##############################
 metric_explanation = """<style>
 .metric-info-container {
     margin-top: 10px;
@@ -1055,7 +1356,7 @@ metric_explanation = """<style>
     </div>
 </div>
 """
-
+############################## VIOLENCIA DE GENERO, PANORAMA FEMENINO ##############################
 violencia_genero = """
 <style>
 .violencia-wrapper{
@@ -1119,6 +1420,164 @@ Como se puede evidenciar en el anterior gráfico, la violencia contra la mujer e
 Este fenómeno incluye diversas formas de abuso, como la violencia física, sexual, psicológica y económica, y tiene profundas repercusiones en la salud, el bienestar y los derechos humanos de las mujeres. Es por ello que es necesario ahondar en las tendencias de esta problemática para diseñar estrategias efectivas de prevención y apoyo a las víctimas.
 </p>
 </div>
+</div>
+"""
+############################# DELITOS CONTRA LA MUJER #############################
+componente_feminicidios = """
+<style>
+
+.fem-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 18px;
+    color: #e6e6e6;
+    font-family: 'Segoe UI', sans-serif;
+    backdrop-filter: blur(4px);
+    animation: fadeSlide 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fem-card:hover {
+    transform: translateY(5px);
+    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.fem-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f5f5f5;
+    letter-spacing: 0.5px;
+    text-shadow: 0px 0px 8px rgba(255,255,255,0.08);
+}
+
+.fem-line {
+    width: 90%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff4d6d, #ff99ac);
+    border-radius: 20px;
+    margin: 8px 0 22px 0;
+    animation: expandLine 1.4s ease-out forwards;
+    transform-origin: left;
+    opacity: 0;
+}
+
+.fem-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #d1d1d1;
+    text-align: justify;
+}
+
+@keyframes fadeSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandLine {
+    0% { transform: scaleX(0); opacity: 0; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="fem-card">
+    <div class="fem-title">Victimas Femeninas por Departamento</div>
+    <div class="fem-line"></div>
+    <div class="fem-text">
+        Como vimos anteriormente, el genero femenino representa una mayoría significativa de las víctimas de delitos sexuales en Colombia.
+        Este hecho resalta la urgente necesidad de enfocar esfuerzos en la protección y apoyo a las mujeres afectadas por estas conductas delictivas.
+        <br><br>
+        Al analizar la distribución por departamento, podemos identificar las regiones donde las mujeres enfrentan mayores riesgos,
+        De esta manera, resulta facil observar la distribución geográfica de los casos y detectar patrones que nos ayuden a entener el fenomeno
+</div>
+"""
+
+componente_tendencia_fem = """
+<style>
+
+.fem-trend-card {
+background: rgba(255, 255, 255, 0.035);
+border: 1px solid rgba(255, 255, 255, 0.07);
+padding: 28px;
+border-radius: 16px;
+color: #e6e6e6;
+font-family: 'Segoe UI', sans-serif;
+backdrop-filter: blur(3px);
+animation: fadeUp 1.1s ease forwards;
+opacity: 0;
+transform: translateY(24px);
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fem-trend-card:hover {
+transform: translateY(6px);
+box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+.fem-trend-title {
+font-size: 1.55rem;
+font-weight: 700;
+margin-bottom: 12px;
+color: #f4f4f4;
+letter-spacing: 0.3px;
+}
+
+.fem-trend-line {
+width: 35%;
+height: 3px;
+background: linear-gradient(90deg, #ff4d6d, #ff99ac);
+border-radius: 20px;
+margin: 8px 0 20px 0;
+animation: growLine 1.3s ease-out forwards;
+transform-origin: left;
+opacity: 0;
+}
+
+.fem-trend-text {
+font-size: 1.03rem;
+line-height: 1.6;
+color: #d1d1d1;
+text-align: justify;
+}
+
+@keyframes fadeUp {
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes growLine {
+0% { transform: scaleX(0); opacity: 0; }
+100% { transform: scaleX(1); opacity: 1; }
+}
+
+</style>
+
+<div class="fem-trend-card">
+<div class="fem-trend-title">¿Por qué analizar la tendencia anual?</div>
+<div class="fem-trend-line"></div>
+<div class="fem-trend-text">
+  Tras analizar lo anterior, rapidamente nos damos cuenta que los departamentos con mayor número de víctimas femeninas también muestran un aumento constante en los casos reportados año tras año.
+  Esta correlación sugiere que ciertos factores regionales podrían estar contribuyendo a la persistencia y el incremento de estos delitos.
+  por ejemplo, factores socioeconómicos, culturales, demograficos o incluso la eficacia de las políticas públicas implementadas en cada región.
+  <br><br>
+  También es importante resaltar que este es el tipo de victima más vulnerable, por ende, es necesario ver como ha evolucionado la situación a lo largo del tiempo para entender mejor el fenómeno y diseñar estrategias efectivas de prevención y apoyo.
+  En el siguiente gráfico se observa la tendencia anual de víctimas femeninas por departamento.
+</div>
+</div>
+"""
+
+metric_info_gen = """
+<div class="metric-info-container">
+<div class="metric-info-box">
+NOTA: Los datos solo van hasta Mayo del 2025, por eso la tendencia anual puede no reflejar el comportamiento completo del año.
 </div>
 """
 
