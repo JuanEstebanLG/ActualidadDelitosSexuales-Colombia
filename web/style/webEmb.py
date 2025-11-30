@@ -1,3 +1,217 @@
+bloqueo_movile ="""
+<style>
+body.mobile-blocked {
+background: radial-gradient(circle at top left, #182747 0%, #0B1020 45%, #050609 100%);
+}
+
+body.mobile-blocked > *:not(#mobile-block-root) {
+display: none !important;
+}
+
+#mobile-block-root {
+position: fixed;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 1.5rem;
+z-index: 9999;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+color: #F9FAFB;
+}
+
+.mobile-card {
+max-width: 480px;
+width: 100%;
+background: rgba(10, 14, 30, 0.95);
+border-radius: 24px;
+padding: 2rem 1.75rem;
+box-shadow:
+0 24px 60px rgba(0, 0, 0, 0.65),
+0 0 0 1px rgba(148, 163, 184, 0.20);
+backdrop-filter: blur(14px);
+animation: fadeInUp 500ms ease-out;
+position: relative;
+overflow: hidden;
+}
+
+.mobile-card::before {
+content: "";
+position: absolute;
+width: 260px;
+height: 260px;
+border-radius: 999px;
+background: radial-gradient(circle, rgba(56,189,248,0.16), transparent 60%);
+top: -120px;
+right: -80px;
+pointer-events: none;
+animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+.mobile-pill {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+padding: 0.35rem 0.9rem;
+border-radius: 999px;
+background: rgba(15, 23, 42, 0.95);
+border: 1px solid rgba(148, 163, 184, 0.55);
+font-size: 0.75rem;
+letter-spacing: 0.06em;
+text-transform: uppercase;
+color: #E5E7EB;
+margin-bottom: 1.25rem;
+}
+
+.mobile-pill-dot {
+width: 8px;
+height: 8px;
+border-radius: 999px;
+background: #22C55E;
+box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+animation: pulseDot 1.6s ease-out infinite;
+}
+
+.mobile-title {
+font-size: 1.45rem;
+font-weight: 650;
+letter-spacing: 0.01em;
+margin: 0 0 0.75rem 0;
+color: #F9FAFB;
+}
+
+.mobile-subtitle {
+font-size: 0.95rem;
+line-height: 1.6;
+color: #CBD5F5;
+margin-bottom: 1.5rem;
+}
+
+.mobile-list {
+list-style: none;
+padding: 0;
+margin: 0 0 1.5rem 0;
+}
+
+.mobile-list li {
+display: flex;
+align-items: flex-start;
+gap: 0.6rem;
+font-size: 0.9rem;
+color: #E5E7EB;
+margin-bottom: 0.5rem;
+}
+
+.mobile-list-bullet {
+width: 6px;
+height: 6px;
+margin-top: 0.38rem;
+border-radius: 999px;
+background: linear-gradient(135deg, #38BDF8, #A855F7);
+flex-shrink: 0;
+}
+
+.mobile-footer {
+font-size: 0.8rem;
+color: #9CA3AF;
+border-top: 1px solid rgba(148, 163, 184, 0.35);
+padding-top: 0.9rem;
+margin-top: 0.6rem;
+}
+
+.mobile-highlight {
+color: #38BDF8;
+font-weight: 500;
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translate3d(0, 12px, 0);
+}
+to {
+opacity: 1;
+transform: translate3d(0, 0, 0);
+}
+}
+
+@keyframes floatGlow {
+0% {
+transform: translate3d(0, 0, 0) scale(1);
+opacity: 0.95;
+}
+100% {
+transform: translate3d(-8px, 8px, 0) scale(1.06);
+opacity: 0.75;
+}
+}
+
+@keyframes pulseDot {
+0% {
+transform: scale(1);
+opacity: 1;
+}
+70% {
+transform: scale(1.25);
+opacity: 0.3;
+}
+100% {
+transform: scale(1);
+opacity: 1;
+}
+}
+</style>
+
+<script>
+(function() {
+const ua = navigator.userAgent || navigator.vendor || window.opera;
+const isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua.toLowerCase());
+
+if (isMobile && !window.__streamlitMobileBlocked) {
+window.__streamlitMobileBlocked = true;
+
+document.body.classList.add('mobile-blocked');
+
+const root = document.createElement('div');
+root.id = 'mobile-block-root';
+
+root.innerHTML = `
+<div class="mobile-card">
+<div class="mobile-pill">
+    <span class="mobile-pill-dot"></span>
+    <span>Vista móvil en construcción</span>
+</div>
+<h1 class="mobile-title">Estamos puliendo la experiencia en tu teléfono</h1>
+<p class="mobile-subtitle">
+    Esta aplicación está pensada para una vista de escritorio y todavía no se adapta bien a pantallas pequeñas.
+    Preferimos bloquear la versión móvil antes que ofrecerte una experiencia incómoda.
+</p>
+<ul class="mobile-list">
+    <li>
+        <span class="mobile-list-bullet"></span>
+        <span>Abre esta misma URL en tu computador o portátil para explorar el panel completo.</span>
+    </li>
+    <li>
+        <span class="mobile-list-bullet"></span>
+        <span>Si ya estás en un equipo de escritorio, amplía la ventana o desactiva el modo “vista móvil” del navegador.</span>
+    </li>
+</ul>
+<div class="mobile-footer">
+    Seguimos trabajando para ofrecer una <span class="mobile-highlight">versión móvil cómoda y usable</span>.
+    Gracias por tu paciencia.
+</div>
+</div>
+`;
+
+document.body.appendChild(root);
+}
+})();
+</script>
+"""
+
+
+
+
 def boxes(mayor, menor, mediana):
     return (
 """

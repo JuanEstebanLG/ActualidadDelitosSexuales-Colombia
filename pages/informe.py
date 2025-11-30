@@ -2,9 +2,23 @@ import streamlit as st
 from streamlit_folium import st_folium
 from pandas_handler import clean_df
 from informes_handler import *
-from web.style.style import main_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, violencia_genero, componente_feminicidios, componente_tendencia_fem, metric_info_gen, componente_genero, componente_armas, componente_edad, componente_mapa, boxes
+from web.style.webEmb import bloqueo_movile, main_estilo, columna_izquierda_estilo, descripcion_estilo, derechos, h3_boxes, metric_explanation, violencia_genero, componente_feminicidios, componente_tendencia_fem, metric_info_gen, componente_genero, componente_armas, componente_edad, componente_mapa, boxes
 from figures import *
 from tools.data_frame_functions import return_deltas_violencia_mujer
+
+
+
+import streamlit as st
+
+st.set_page_config(
+    page_title="Análisis de Datos",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+# Pantalla de bloqueo para móviles
+st.markdown(bloqueo_movile,unsafe_allow_html=True,)
+
 
 
 

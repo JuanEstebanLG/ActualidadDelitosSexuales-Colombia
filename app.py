@@ -2,9 +2,15 @@
 import folium as folium
 from streamlit_option_menu import option_menu
 from figures import *
-from web.style.style import *
-from web.style.style import hero_cards, home_styles, close_menu, info_team
+from web.style.webEmb import *
+from web.style.webEmb import hero_cards, home_styles, close_menu, info_team
 import pathlib, runpy, streamlit as st
+
+
+
+# Pantalla de bloqueo para móviles
+st.markdown(bloqueo_movile,unsafe_allow_html=True,)
+
 
 
 ################################################################################################                           
