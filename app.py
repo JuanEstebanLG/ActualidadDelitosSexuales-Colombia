@@ -8,9 +8,9 @@ import pathlib, runpy, streamlit as st
 
 
 
-# Pantalla de bloqueo para móviles
-st.markdown(bloqueo_movile,unsafe_allow_html=True,)
-
+# Bloqueo visual para pantallas pequeñas
+st.markdown(bloqueo_movile, unsafe_allow_html=True,
+)
 
 
 ################################################################################################                           
@@ -46,15 +46,18 @@ if selected == "Home":
     
     st.markdown(home_styles, unsafe_allow_html=True)
     st.markdown(hero_cards,unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     
 elif selected == "Dashboards":
     try:
         page_file = pathlib.Path(__file__).parent / "pages" / "informe.py"
         runpy.run_path(str(page_file), run_name="__main__")
+        st.markdown("</div>", unsafe_allow_html=True)
     except Exception as e:
         st.error(f"Error ejecutando informe.py: {e}")
 
 elif selected == "About us":
         
     st.markdown(info_team, unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
